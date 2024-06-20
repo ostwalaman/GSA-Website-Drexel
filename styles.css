@@ -36,6 +36,20 @@ nav ul li a {
     font-weight: bold;
 }
 
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar {
+    height: 3px;
+    width: 25px;
+    background-color: white;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
 .hero {
     background-color: #FFC600;
     color: #07294D;
@@ -53,6 +67,16 @@ h2, h4 {
     color: #07294D;
     border-bottom: 2px solid #E1E1E0;
     padding-bottom: 0.5em;
+}
+
+.goals-list li {
+    margin-bottom: 1em;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.goals-list li:hover {
+    transform: translateX(10px);
+    opacity: 0.8;
 }
 
 .e-board-members {
@@ -93,9 +117,9 @@ h2, h4 {
 }
 
 .profile-pic {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
+    width: 150px; /* Adjust width as needed */
+    height: 150px; /* Adjust height as needed */
+    object-fit: cover;
     margin-bottom: 1em;
 }
 
@@ -148,17 +172,32 @@ footer {
 }
 
 @media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
     .e-board-member {
         flex: 1 1 45%;
     }
 
-    nav ul {
+    /* nav ul {
         flex-direction: column;
         align-items: center;
+    } */
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        display: none;
     }
 
     nav ul li {
+        text-align: center;
         margin: 5px 0;
+    }
+
+    nav ul.showing {
+        display: flex;
     }
 }
 

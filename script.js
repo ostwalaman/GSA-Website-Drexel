@@ -1,4 +1,11 @@
 document.addEventListener('DOMContentLoaded', function () {
+    var menuToggle = document.getElementById('mobile-menu');
+    var navList = document.querySelector('.nav-list');
+
+    menuToggle.addEventListener('click', function () {
+        navList.classList.toggle('showing');
+    });
+
     var members = document.querySelectorAll('.e-board-member');
 
     members.forEach(function (member) {
