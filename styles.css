@@ -184,7 +184,7 @@ p {
     text-decoration: underline;
 }
 
-/* Carousel Container */
+/* Carousel Events Container */
 .carousel-event {
     position: relative;
     width: 80%;
@@ -225,7 +225,96 @@ p {
     text-decoration: underline;
 }
 
-/* Carousel Controls */
+/* Carousel Social Container */
+.carousel-social {
+    position: relative;
+    width: 80%;
+    max-width: 100%;
+    margin: auto;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: nowrap;
+    transition: transform 0.5s ease-in-out;
+}
+
+iframe#instagram-embed-0, iframe#instagram-embed-1 {
+    display: inline !important;
+}
+
+/* Newsletter Social Container*/
+.newsletter-link {
+    text-decoration: none;
+}
+
+.newsletter-container {
+    display: flex;
+    align-items: center;
+    max-width: 600px;
+    transition: background-color 0.3s ease;
+}
+
+.newsletter-arrow {
+    background-color: #07294D;
+    padding: 10px;
+    border-radius: 3px;
+    margin-right: 15px;
+}
+
+.newsletter-arrow span {
+    color: #FFFFFF;
+    font-size: 18px;
+}
+
+.newsletter-content h2 {
+    color: #07294D;
+    background-color: #FFC600;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.newsletter-content p {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+
+a.newsletter-link {
+    text-decoration: none !important;
+}
+
+/* Carousel Events */
+.carousel-social-item {
+    min-width: 100%;
+    text-align: center;
+    animation: fadeIn 1s ease forwards;
+}
+
+.carousel-social-item h3 {
+    font-size: 1.8rem;
+    color: var(--primary-blue);
+    margin-bottom: 10px;
+}
+
+.carousel-social-item p {
+    color: var(--text-dark);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.carousel-social-item a {
+    color: var(--link-blue);
+    text-decoration: none;
+}
+
+.carousel-social-item a:hover {
+    text-decoration: underline;
+}
+
+/* Carousel Photos Container */
 .carousel-control {
     position: absolute;
     top: 50%;
@@ -419,12 +508,6 @@ form button {
 }
 
 /* Social Media */
-.social-media {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-}
-
 .social-media h3 {
     margin-bottom: 1rem;
 }

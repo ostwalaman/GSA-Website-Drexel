@@ -33,7 +33,30 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector('.carousel-event-control.prev').addEventListener('click', prevEventsSlide);
 
         showEventsSlide(currentEventsSlide);
-        setInterval(nextEventsSlide, 5000); // Auto-change slide every 5 seconds
+        setInterval(nextEventsSlide, 10000); // Auto-change slide every 10 seconds
+    };
+
+    // Carousel functionality for social slides
+    const setupSocialCarousel = () => {
+        let currentSocialSlide = 0;
+        const socialSlides = document.querySelectorAll('.carousel-social-item');
+        const totalSocialSlides = socialSlides.length;
+
+        const showSocialSlide = index => socialSlides.forEach((slide, i) => slide.style.display = i === index ? 'block' : 'none');
+        const nextSocialSlide = () => {
+            currentSocialSlide = (currentSocialSlide + 1) % totalSocialSlides;
+            showSocialSlide(currentSocialSlide);
+        };
+        const prevSocialSlide = () => {
+            currentSocialSlide = (currentSocialSlide - 1 + totalSocialSlides) % totalSocialSlides;
+            showSocialSlide(currentSocialSlide);
+        };
+
+        document.querySelector('.carousel-event-control.next').addEventListener('click', nextSocialSlide);
+        document.querySelector('.carousel-event-control.prev').addEventListener('click', prevSocialSlide);
+
+        showSocialSlide(currentSocialSlide);
+        setInterval(nextSocialSlide, 8000); // Auto-change slide every 8 seconds
     };
 
     // Carousel functionality for photo slides
@@ -93,6 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const initialize = () => {
         setupSmoothScroll();
         setupEventCarousel();
+        setupSocialCarousel();
         setupPhotoCarousel();
         animateWelcomeMessage();
         setupSectionReveal();
