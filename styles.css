@@ -19,8 +19,6 @@
     --accent-beige: #BFB8AF;
     --accent-sage: #BAC5B9;
     --accent-light-gray: #D0D3D4;
-    --primary-dark-blue: #07294D;
-    --text-dark-blue: #07294D;
     --text-black: #000000;
     --text-grey: #333333;
     --rules-grey: #E1E1E0;
@@ -36,7 +34,7 @@
 /* Global Styles */
 body, h2, label {
     font-family: Arial, sans-serif;
-    color: var(--text-dark-blue);
+    color: var(--primary-blue);
     margin: 0;
     padding: 0;
     line-height: 1.6;
@@ -59,10 +57,23 @@ main {
 
 /* Header */
 header {
-    background-color: var(--primary-dark-blue);
+    background-color: var(--primary-blue);
     padding: 10px 0;
-    color: #fff;
+    /* color: #fff; */
+    color: var(--primary-yellow);
     text-align: center;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-yellow);
+    text-align: center;
+    margin: 0;
 }
 
 nav ul {
@@ -84,6 +95,14 @@ nav ul li a {
     font-size: 1.1rem;
 }
 
+/* Hide the hamburger icon and keep the full menu visible on larger screens */
+.hamburger-menu {
+    display: none;
+    cursor: pointer;
+    font-size: 1.8rem;
+    color: #FFC600;
+}
+
 /* Sections */
 section {
     padding: 40px;
@@ -92,7 +111,7 @@ section {
 }
 
 h1, h2, h3 {
-    color: var(--primary-dark-blue);
+    color: var(--primary-blue);
 }
 
 h2, h3 {
@@ -471,11 +490,10 @@ a.newsletter-link {
 
 /* Footer */
 footer {
-    background-color: var(--primary-dark-blue);
+    background-color: var(--primary-blue);
     color: var(--primary-yellow);
     text-align: center;
     padding: 20px 0;
-    position: absolute;
     width: 100%;
     bottom: 0;
 }
@@ -534,3 +552,42 @@ form button {
         transform: translateY(0);
     }
 }
+
+/* Mobile styles for hamburger menu */
+@media (max-width: 768px) {
+    /* Hide the regular navigation menu */
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: #07294D;
+        width: 100%;
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    /* Show the hamburger menu icon */
+    .hamburger-menu {
+        display: block;
+        font-size: 3rem;
+        position: absolute;
+        right: 20px;
+        top: -12px;
+    }
+
+    /* Center the GSA text */
+    header h1 {
+        flex: 1;
+        text-align: center;
+        margin: 0;
+    }
+
+    /* Toggle the mobile menu when hamburger is clicked */
+    nav ul.open {
+        display: flex;
+    }
+}
+
+.linktree { display: none; }
